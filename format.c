@@ -27,6 +27,8 @@ int menu(void){
 
     fgets(buffer, 40, stdin);
     return_val = atoi(buffer);
+
+    return return_val;
 }
 
 void server_status(void){

@@ -1,6 +1,6 @@
-# NebulaRogue - Format string
+# Nebula Rogue - Format string Vulnerability
 
-### Author: Emmmanuel(@emmaunel)
+### Author: Emmmanuel
 
 As intrepid space explorers, we embark on a journey through the intricate code cosmos woven by our junior dev, who crafted a mesmerizing FTP server for the homelabbers. Yet, before we unveil its full potential, we seek an audacious comrade like yourself to join our quest in unraveling any enigmatic anomalies that might lie within. Will you embark on this cosmic expedition with us?
 

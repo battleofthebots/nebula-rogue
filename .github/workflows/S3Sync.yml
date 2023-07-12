@@ -33,4 +33,4 @@ jobs:
         run: make
 
       - name: Sync to S3
-        run: aws s3 cp format s3://golden-img-files/nebula-rogue/nebula-rogue
+        run: aws s3 cp format s3://challenge-binaries/nebula-rogue/nebula-rogue

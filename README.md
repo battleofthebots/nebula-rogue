@@ -6,10 +6,30 @@ As intrepid space explorers, we embark on a journey through the intricate code c
 
 # Vulnerabilty: Format string vulnerabilty
 * During startup, a config is loaded which contains a ssh private key.
-* For user input, they put in %p %p and so on to grab the FLAG  content from the stack.
+* For user input, they put in %p %p and so on to grab the SSH content from the stack.
 * grab the ssh key, pivot to the next box
 
-# Explanation
-TODO
+# Solution
 
-# Run exploit.py for testing
+There are two scripts
+
+* fuzz.py: This is used to find all the address and values on the stack. For us, it turns out at index 43
+
+* exploit.py: Returns a ssh private key to then ssh into the container
+
+`Local solve: python3 exploit.py`
+
+`Local debugging: python3 exploit.py GDB`
+
+`Remote solve: python3 exploit REMOTE <IP> <PORT>`
+
+## SETUP
+
+```
+# Build docker image
+docker build -t format .
+
+# Run image
+docker run -p 9001:9001 format
+
+```

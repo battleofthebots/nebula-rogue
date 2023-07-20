@@ -30,6 +30,6 @@ There are two scripts
 docker build -t format .
 
 # Run image
-docker run -p 9001:9001 format
+docker run -p 2222:22 -p 9001:9001 format
 
 ```

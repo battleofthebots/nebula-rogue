@@ -10,6 +10,7 @@ WORKDIR /home/user
 
 COPY format.c .
 COPY Makefile .
+COPY entrypoint.sh .
 
 RUN make
 
@@ -22,7 +23,9 @@ RUN echo "BUFFER\nBUFFER\nBUFFER\nBUFFER\nBUFFER\nBUFFER\nBUFFER\n" > /home/user
 RUN cat /home/user/.ssh/id_rsa >> /home/user/cosmic_config.txt
 RUN mv /home/user/.ssh/id_rsa.pub  /home/user/.ssh/authorized_keys
 
-
 EXPOSE 22 
 EXPOSE 9001
-CMD ["socat", "-T60", "TCP-LISTEN:9001,reuseaddr,fork", "EXEC:/home/user/format"]
+
+USER root
+RUN chmod +x /home/user/entrypoint.sh
+ENTRYPOINT [ "/home/user/entrypoint.sh" ]

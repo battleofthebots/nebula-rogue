@@ -1,5 +1,5 @@
 format:
-	gcc format.c -o format
+	gcc format.c -s -o AstralFTP
 
 clean:
-	rm format
+	rm AstralFTP
